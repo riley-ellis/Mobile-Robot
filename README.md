@@ -24,7 +24,7 @@ The project includes the following ROS2 nodes:
 git clone https://github.com/riley-ellis/Mobile-Robot.git
 
 ### BerryIMU
-This project uses BerryIMU for IMU interfacing. The BerryIMU code is not included in this repository. Visit the [BerryIMU website](http://ozzmaker.com/berryimu) for installation instructions and place it in `~/ros_projects/mobile_robot_ws/src/robot_controller/robot_controller/BerryIMU`.
+This project uses BerryIMU for IMU interfacing. The BerryIMU code is not included in this repository. Visit the [BerryIMU website](http://ozzmaker.com/berryimu) for installation instructions and place it in `/robot_controller/BerryIMU`.
 
 ## Data Collection
 Detail the procedures for collecting GPS, IMU, and LiDAR data, including instructions on initiating data logging and the location where data is stored.
