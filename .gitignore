@@ -1,0 +1,32 @@
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py~ 
+*.py.swp
+
+# ROS2 build directories
+build/
+install/
+log/
+
+# Environment files
+.venv
+.env
+.env.local
+
+# IDE-specific files and directories
+# (Uncomment these as needed, based on your development environment)
+#.idea/
+#.vscode/
+#*.sublime-workspace
+
+# Other files and directories to ignore
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore specific config files (if any, uncomment as needed)
+#config.json
+
