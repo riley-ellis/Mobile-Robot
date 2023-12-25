@@ -30,3 +30,4 @@ Thumbs.db
 # Ignore specific config files (if any, uncomment as needed)
 #config.json
 
+ ~/ros_projects/mobile_robot_ws/src/robot_controller/robot_controller/BerryIMU
