@@ -23,7 +23,6 @@ The project includes the following ROS2 nodes:
 ## Clone the repository:
 git clone https://github.com/riley-ellis/Mobile-Robot.git
 
-
 ### BerryIMU
 This project uses BerryIMU for IMU interfacing. The BerryIMU code is not included in this repository. Visit the [BerryIMU website](http://ozzmaker.com/berryimu) for installation instructions and place it in `~/ros_projects/mobile_robot_ws/src/robot_controller/robot_controller/BerryIMU`.
 
