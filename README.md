@@ -22,4 +22,4 @@ The project includes the following ROS2 nodes:
 
 ## Installation
 1. Clone the repository:
-git clone [repository URL]
+git clone [[repository URL]](https://github.com/riley-ellis/Mobile-Robot.git)https://github.com/riley-ellis/Mobile-Robot.git
