@@ -30,7 +30,7 @@ class Motor:
     def set_speed(self, speed):
         #speed is essentially a pwm value
         #its in the range [-self.max_speed, self.max_speed]
-        speed = max(min(speed, round(self.max_speed)), -round(self.max_speed))
+        speed = max(min(speed, self.max_speed), -self.max_speed)
         if speed > 0:
             self.forward()
         elif speed < 0:
@@ -49,10 +49,6 @@ class Motor:
 
     def start(self):
         self.pwm.start(0)
-
-    def cleanup(self):
-        self.pwm.stop()
-        GPIO.cleanup([self.in1, self.in2, self.enable])
 
 class Robot:
 
@@ -79,5 +75,6 @@ class Robot:
         self.right_motor.start()
 
     def cleanup(self):
-        self.left_motor.cleanup()
-        self.right_motor.cleanup()
+        self.left_motor.stop()
+        self.right_motor.stop()
+        GPIO.cleanup()

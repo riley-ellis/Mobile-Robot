@@ -21,7 +21,7 @@ class lidarToCSVNode(Node):
 		self.robot = Robot(max_motor_power)
 		#define max speeds of left and right motors
 		self.robot.left_motor.max_speed = round(self.robot.max_motor_power) #edit these to make max speed of each motor equal
-		self.robot.right_motor.max_speed = round(self.robot.max_motor_power) #for now this can be done by visual observation
+		self.robot.right_motor.max_speed = round(self.robot.max_motor_power*0.93) #for now this can be done by visual observation (not perfect but close)
 
 		#subscribe to joy
 		self.ps4_subscriber = self.create_subscription(
@@ -67,6 +67,7 @@ class lidarToCSVNode(Node):
 	def control_callback(self, msg):
 		#capture control state (left straight or right)
 		state = msg.axes[6]
+		x = msg.buttons[0]
 		#append it to list
 		self.current_control_states.append(state)
 
@@ -77,13 +78,15 @@ class lidarToCSVNode(Node):
 		#determine control ouput
 		if round(state) == -1:
 			#set left speed slower to turn left (edit these for desired turning rate)
-			self.robot.skid(self.robot.left_motor.max_speed/100, self.robot.right_motor.max_speed*0.8/100)
+			self.robot.skid(self.robot.left_motor.max_speed/100, self.robot.right_motor.max_speed*0.6/100)
 		elif round(state) == 1:
 			#set right speed slower to turn right (edit these for desired turning rate)
-			self.robot.skid(self.robot.left_motor.max_speed*0.8/100, self.robot.right_motor.max_speed/100)
+			self.robot.skid(self.robot.left_motor.max_speed*0.6/100, self.robot.right_motor.max_speed/100)
 		elif round(state) == 0:
 			#robot goes straight
 			self.robot.skid(self.robot.left_motor.max_speed/100, self.robot.right_motor.max_speed/100)
+		if round(x) == 1:
+			self.robot.skid(0, 0)
 
 	def lidar_callback(self, msg):
 		#get lidar data
