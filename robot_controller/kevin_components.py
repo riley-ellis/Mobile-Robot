@@ -56,7 +56,7 @@ class Robot:
         #define a max motor speed (must be between 0 and 100)
         self.max_motor_power = max_motor_power #this is a percentage between 1 and 100%
         self.left_motor = Motor(11, 13, 15, self.max_motor_power)
-        self.right_motor = Motor(18, 16, 12, self.max_motor_power)
+        self.right_motor = Motor(16, 18, 12, self.max_motor_power)
 
     def skid(self, left_speed, right_speed):
         #left_speed and right_speed are expected to be in range [-1.0, 1.0]
